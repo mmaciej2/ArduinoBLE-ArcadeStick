@@ -1,2 +1,2 @@
 
-# ** ArduinoBLE ArcadeStick (and HID over GATT pseudo-emulator) #
+# ** ArduinoBLE ArcadeStick (and HID over GATT pseudo-emulator) ** #
