@@ -33,7 +33,7 @@ bool check_button(button *b, unsigned long now) {
   return false;
 }
 
-const byte report_descriptor[51] = {
+const byte report_descriptor[53] = {
   0x05, 0x01,  // Usage Page (Generic Desktop)
   0x09, 0x05,  // Usage (Gamepad)
   0xa1, 0x01,  // Collection (Application)
@@ -41,20 +41,21 @@ const byte report_descriptor[51] = {
   0xa1, 0x02,  //   Collection (Logical)
   0x09, 0x01,  //     Usage (Pointer)
   0xa1, 0x00,  //     Collection (Physical)
-  0x09, 0x90,  //       Usage (D-pad Up)
-  0x09, 0x91,  //       Usage (D-pad Down)
-  0x09, 0x92,  //       Usage (D-pad Right)
-  0x09, 0x93,  //       Usage (D-pad Left)
-  0x95, 0x04,  //       Report Count (4)
-  0x75, 0x01,  //       Report Size (1)
+  0x09, 0x31,  //       Usage (Y)
+  0x09, 0x30,  //       Usage (x)
+  0x95, 0x02,  //       Report Count (2)
+  0x75, 0x02,  //       Report Size (2)
   0x15, 0x00,  //       Logical Minimum (0)
-  0x25, 0x01,  //       Logical Maximum (1)
+  0x25, 0x02,  //       Logical Maximum (3)
+  0x35, 0x81,  //       Physical Minimum (-127)
+  0x45, 0x7F,  //       Physical Maximum (127)
   0x81, 0x02,  //       Input (Data,Var,Abs)
   0x05, 0x09,  //       Usage Page (Button)
   0x09, 0x01,  //       Usage (Button 1)
   0x09, 0x02,  //       Usage (Button 2)
   0x09, 0x10,  //       Usage (Button 16)
   0x95, 0x03,  //       Report Count (3)
+  0x75, 0x01,  //       Report Size (1)
   0x81, 0x02,  //       Input (Data,Var,Abs)
   0x95, 0x01,  //       Report Count (1)
   0x81, 0x03,  //       Input (Cnst,Var,Abs)
