@@ -3,7 +3,7 @@
 set -e
 exec 3< <(sudo /home/phthisis/anaconda3/bin/python arcadestick_backend.py)
 PYTHON_PID=$!
-sed '/connected/q' <&3
+grep -m1 'connected' <&3 || exit
 mame &
 MAME_PID=$!
 wait $PYTHON_PID
